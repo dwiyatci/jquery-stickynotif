@@ -44,8 +44,7 @@
             if ($(this).attr('id') == uniqID) { uniqID = Math.floor(Math.random() * 9999999); }
         });
 
-        var body = $('body')
-            , sticky = $('#' + uniqID);
+        var body = $('body');
         // Make sure the sticky queue exists
         if (!body.find('.sticky-queue').html()) { body.append('<div class="sticky-queue ' + position + '"></div>'); }
 
@@ -53,6 +52,7 @@
         if (display) {
             // Building and inserting sticky note
             $('.sticky-queue').prepend('<div class="sticky border-' + position + ' sticky-' + stickyClass + '" id="' + uniqID + '"></div>');
+            var sticky = $('#' + uniqID);
             sticky.append('<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA1klEQVQoz6WSOw6CQBCG90gWXsjKxph4HZAEsgUSHlsAAa6ilzDGgopxP5Ix2K7FJH/+x+wMjBERoxXH8d5aey2K4l6W5ZMCw6FtvV+Qpumlrut313UyDIOM47gWGA4Nz08QomkaadtW+r5fA9M0rQWGQ8OjYRNF0c53mxH8aLc8z8/OuYWXKDAcGh68ZAzzMwpdveFEtyzLDt6AScBwaHjwkjF++cem+6zGJEmOlDZCUx8ZU1XVS3eC9K8sGtAGcGi6M5nwYPCowR8n+HcEH8BfJxdy5B8L5i9vzgm5WAAAAABJRU5ErkJggg==" class="sticky-close" rel="' + uniqID + '" title="Close" />');
             sticky.append('<div class="sticky-note" rel="' + uniqID + '">' + note + '</div>');
 
