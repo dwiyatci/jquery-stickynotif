@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery StickyNotif Demo</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="dist/styles/jquery.stickynotif.min.css"/>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="dist/jquery.stickynotif.min.js"></script>
+
+    <style>
+        div.container {
+            margin:  4px;
+            padding: 4px;
+        }
+
+        p.centered {
+            width:          300px;
+            text-align:     center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="centered">
+        <button id="default">Default »</button>
+        <button id="info">Info »</button>
+        <button id="success">Success »</button>
+    </p>
+    <p class="centered">
+        <button id="warning">Warning »</button>
+        <button id="error">Error »</button>
+    </p>
+
+    <script>
+        $(function () {
+            var defaultMessage = '<strong>The purpose of life?</strong> To see the world, things dangerous to come to, to see behind walls, draw closer, to find each other, and to feel.'
+                    , infoMessage = '<strong>Info!</strong> Three credits remain in your account.'
+                    , successMessage = '<strong>Success!</strong> Profile details updated.'
+                    , warningMessage = '<strong>Warning!</strong> Your account expires in three days.'
+                    , errorMessage = '<strong>Error!</strong> Document deleted.';
+
+            $('#default').on('click', function () {
+                $.sticky(defaultMessage);
+            });
+
+            $('#info').on('click', function () {
+                $.sticky(infoMessage, {
+                    stickyClass: 'info'
+                });
+            });
+
+            $('#success').on('click', function () {
+                $.sticky(successMessage, {
+                    stickyClass: 'success'
+                });
+            });
+
+            $('#warning').on('click', function () {
+                $.sticky(warningMessage, {
+                    stickyClass: 'warning'
+                });
+            });
+
+            $('#error').on('click', function () {
+                $.sticky(errorMessage, {
+                    stickyClass: 'error'
+                });
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
